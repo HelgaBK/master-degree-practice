@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,600;1,900&display=swap");
+@import url("https://rsms.me/inter/inter.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+.app {
+  @apply relative w-full h-screen overflow-hidden;
+}
+
+.home {
+  @apply w-fit xl:h-full flex xl:justify-between justify-start items-start flex-col xl:py-8 xl:px-36 sm:p-8 p-6 max-xl:gap-7 absolute z-10;
+}
+
+.home-content {
+  @apply flex-1 xl:justify-center justify-start flex flex-col gap-10;
+}
+.head-text {
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 5rem;
+  height: 40rem; 
+  color: #212121;
+  
+  @media (min-width: 1280px) {
+    font-size: 5rem;
+    line-height: 6rem;
+    height: 40rem; 
+  }
+}
+
+.head-text-small {
+  font-size: 2rem;
+  line-height: 3.5rem;
+  height: 20rem;
+}
+
+/* .head-text-big {
+  font-size: 5rem;
+  line-height: 6rem;
+  color: #DFCA55;
+} */
+
+.head-text-big {
+  font-size: 5rem;
+  line-height: 6rem;
+  color: #DFCA55;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    text-shadow: 0 0 5px #DFCA55;
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+    text-shadow: 0 0 20px #DFCA55;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    text-shadow: 0 0 5px #DFCA55;
+  }
+}
+
+.head-text-big:hover {
+  animation: glow 1s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #DFCA55;
+  }
+  50% {
+    text-shadow: 0 0 20px #DFCA55;
+  }
+  100% {
+    text-shadow: 0 0 5px #DFCA55;
+  }
+}
+
+
+.download-btn {
+  @apply w-14 h-14 flex justify-center items-center rounded-full glassmorphism cursor-pointer outline-none;
+}
+
+.editortabs-container {
+  @apply glassmorphism w-16 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-4;
+}
+
+.filtertabs-container {
+  @apply absolute z-10 bottom-5 right-0 left-0 w-full flex justify-center items-center flex-wrap gap-4;
+  height: 150px;
+}
+
+
+.aichooser-container {
+  @apply absolute left-full ml-3 glassmorphism p-3 w-[195px] h-[220px] rounded-md flex flex-col gap-4;
+}
+
+.aichooser-textarea {
+  @apply w-full bg-transparent text-sm border border-gray-300 p-2 outline-none flex-1;
+}
+
+
+.filechooser-container {
+  @apply absolute left-full ml-3 glassmorphism p-3 w-[195px] h-[220px] flex flex-col rounded-md;
+}
+
+.filechooser-label {
+  @apply border border-gray-300 py-1.5 px-2 rounded-md shadow-sm text-xs text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 cursor-pointer w-fit;
+}
+
+.filterTab-btn {
+  @apply w-14 h-14 flex justify-center items-center cursor-pointer select-none;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 30px 0 rgba(31, 38, 135, 0.07);
+  Background-filter: blur(4px);
+  -webkit-Background-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+input[type="file"] {
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+}
+
+.sketch-chooser {
+  width: 170px !important;
+  background: rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 2px 30px 0 rgba(31, 38, 135, 0.07) !important;
+  Background-filter: blur(4px) !important;
+  -webkit-Background-filter: blur(4px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 6px !important;
+}
+
+.sketch-chooser > div:nth-child(3) {
+  display: none !important;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+.glow-pulse-button {
+  animation: glow-pulse 1s ease-in-out infinite;
+  box-shadow: 0 0 10px 2px rgba(0, 255, 0, 0.8);
+}
+
+@keyframes glow-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.8);
+  }
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.8);
+  }
+}
+
+
+
